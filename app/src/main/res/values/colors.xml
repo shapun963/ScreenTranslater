@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="dialogBackground">#FFFFFF</color>
+    <color name="colorPrimary">#6200EE</color>
+	<color name="colorPrimaryDark">#4B01D1</color>
+	<color name="colorAccent">#9D46FF</color>
+	<color name="colorControlHighlight">@color/colorGrey</color>
+	<color name="colorControlNormal">#9D46FF</color>
+	<color name="colorBackground">#FFFFFF</color>
+	<color name="colorSurface">#FFFFFF</color>
+	<color name="colorError">#B00020</color>
+	<color name="colorOnPrimary">#FFFFFF</color>
+	<color name="colorOnSecondary">#000000</color>
+	<color name="colorOnBackground">#000000</color>
+	<color name="colorOnSurface">#757575</color>
+	<color name="colorOnError">#FFFFFF</color>
+	<color name="colorGrey">#E0E0E0</color>
+</resources>

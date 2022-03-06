@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+	android:padding="5dp"
+    android:orientation="vertical" >
+	
+    <TextView
+        android:id="@+id/view_original"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:background="?android:selectableItemBackground"
+        android:layout_gravity="right"
+        android:padding="5dp"
+        android:text="View Original"
+		android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/translated_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Translaing . . . . "
+		android:textColor="@color/colorOnSurface"
+        android:textSize="14sp" />
+		<View
+		android:layout_width="match_parent"
+		android:layout_height="0.5dp"
+		android:background="@drawable/round_outline"
+		android:backgroundTint="@color/colorGrey"/>
+</LinearLayout>

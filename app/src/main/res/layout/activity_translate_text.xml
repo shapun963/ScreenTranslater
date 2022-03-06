@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="@drawable/round_outline"
+    android:backgroundTint="@color/dialogBackground"
+	android:layout_margin="20dp"
+    android:orientation="vertical" >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay" >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="Translated Texts" >
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+	
+	<LinearLayout
+		android:id="@+id/lin_status"
+		android:layout_width="match_parent"
+        android:layout_height="match_parent"
+		android:padding="8dp"
+		android:gravity="center">
+		<TextView
+			android:id="@+id/tv_status"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="8dp"
+			android:textSize="18sp"
+			android:text="Translating . . ."/>
+	</LinearLayout>
+		
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+		
+</LinearLayout>

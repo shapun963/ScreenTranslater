@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+		<item name="colorPrimary">@color/colorPrimary</item>
+		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+		<item name="colorAccent">@color/colorAccent</item>
+		<item name="colorControlHighlight">@color/colorControlHighlight</item>
+		<item name="colorControlNormal">@color/colorControlNormal</item>
+		<item name="android:textColor">@color/colorOnSurface</item>
+		<item name="snackbarStyle">@style/snackbar_style</item>
+		<item name="snackbarTextViewStyle">@style/snackbar_text</item>
+		<!--<item name="snackbarButtonStyle">@style/snackbar_button</item> -->
+		<item name="bottomSheetDialogTheme">@style/CustomBottomSheetDialog</item>
+		<item name="android:statusBarColor">@color/colorBackground</item>
+		<item name="android:fontFamily">@font/whitney</item>
+		<item name="android:windowLightStatusBar" tools:targetApi="m">@bool/light_mode</item>
+      </style>
+		  
+	<style name="AppTheme.FullScreen" parent="AppTheme">
+		<item name="android:windowFullscreen">true</item>
+		<item name="android:windowContentOverlay">@null</item>
+	</style>
+		
+	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+	<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+	
+	<style name="Theme.MyApp.Dialog.Alert" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+    <!-- Text Color for Buttons -->
+    <item name="colorPrimary">@color/colorControlNormal</item>
+	</style>
+		
+	<style name="snackbar_style" parent="@style/Widget.MaterialComponents.Snackbar">
+     <item name="backgroundTint">@color/dialogBackground</item>
+  </style>
+	 <style name="snackbar_text" parent="@style/Widget.MaterialComponents.Snackbar.TextView">
+    <item name="android:textColor">@color/colorOnSurface</item>
+  </style>
+	  <!--
+	  <style name="snackbar_button" parent="@style/Widget.MaterialComponents.Button.TextButton.Snackbar">
+      <item name="backgroundTint">@color/secondaryLightColor</item>
+      <item name="android:textColor">@color/primaryDarkColor</item>
+  </style>-->
+	 <style name="CustomBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+    <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+  </style>
+
+  <style name="CustomBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+    <item name="shapeAppearanceOverlay">@style/CustomShapeAppearanceBottomSheetDialog</item>
+  </style>
+	  
+  <style name="CustomShapeAppearanceBottomSheetDialog" parent="">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSizeTopRight">16dp</item>
+    <item name="cornerSizeTopLeft">16dp</item>
+    <item name="cornerSizeBottomRight">0dp</item>
+    <item name="cornerSizeBottomLeft">0dp</item>
+  </style> 
+	  
+	  <!--Custom themes -->
+		
+	 <style name="CustomThemeRed" parent="AppTheme">
+		<item name="colorPrimary">#FFF44336</item>
+		<item name="colorAccent">#FFCDD2</item>
+		<item name="colorControlNormal">#FFCDD2</item>
+	</style>
+		
+	<style name="CustomThemePink" parent="AppTheme">
+		<item name="colorPrimary">#E91E63</item>
+		<item name="colorAccent">#F8BBD0</item>
+		<item name="colorControlNormal">#F8BBD0</item>
+	</style>
+	 <style name="CustomThemePurple" parent="AppTheme">
+		 <item name="colorPrimary">#9C27B0</item>
+		<item name="colorAccent">#E1BEE7</item>
+		<item name="colorControlNormal">#E1BEE7</item>
+	</style>
+	<style name="CustomThemeDeepPurple" parent="AppTheme">
+		 <item name="colorPrimary">#673AB7</item>
+		<item name="colorAccent">#D1C4E9</item>
+		<item name="colorControlNormal">#D1C4E9</item>
+	</style>
+	<style name="CustomThemeIndigo" parent="AppTheme">
+		<item name="colorPrimary">#3F51B5</item>
+		<item name="colorAccent">#C5CAE9</item>
+		<item name="colorControlNormal">#C5CAE9</item>
+	</style>
+	<style name="CustomThemeBlue" parent="AppTheme">
+		<item name="colorPrimary">#2196F3</item>
+		<item name="colorAccent">#BBDEFB</item>
+		<item name="colorControlNormal">#BBDEFB</item>
+	</style>
+	<style name="CustomThemeLightBlue" parent="AppTheme">
+		<item name="colorPrimary">#03A9F4</item>
+		<item name="colorAccent">#B3E5FC</item>
+		<item name="colorControlNormal">#B3E5FC</item>
+	</style>
+	<style name="CustomThemeCyan" parent="AppTheme">
+		<item name="colorPrimary">#00BCD4</item>
+		<item name="colorAccent">#B2EBF2</item>
+		<item name="colorControlNormal">#B2EBF2</item>
+	</style>
+	<style name="CustomThemeTeal" parent="AppTheme">
+		<item name="colorPrimary">#009688</item>
+		<item name="colorAccent">#B2DFDB</item>
+		<item name="colorControlNormal">#B2DFDB</item>
+	</style>	
+	<style name="CustomThemeGreen" parent="AppTheme">
+		<item name="colorPrimary">#4CAF50</item>
+		<item name="colorAccent">#C8E6C9</item>
+		<item name="colorControlNormal">#C8E6C9</item>
+	</style>
+	<style name="CustomThemeLightGreen" parent="AppTheme">
+		<item name="colorPrimary">#8BC34A</item>
+		<item name="colorAccent">#DCEDC8</item>
+		<item name="colorControlNormal">#DCEDC8</item>
+	</style>
+	<style name="CustomThemeLime" parent="AppTheme">
+		<item name="colorPrimary">#CDDC39</item>
+		<item name="colorAccent">#F0F4C3</item>
+		<item name="colorControlNormal">#F0F4C3</item>
+	</style>
+	<style name="CustomThemeYellow" parent="AppTheme">
+		<item name="colorPrimary">#FFEB3B</item>
+		<item name="colorAccent">#FFF9C4</item>
+		<item name="colorControlNormal">#FFF9C4</item>
+	</style>
+	<style name="CustomThemeAmber" parent="AppTheme">
+		<item name="colorPrimary">#FFC107</item>
+		<item name="colorAccent">#FFECB3</item>
+		<item name="colorControlNormal">#FFECB3</item>
+	</style>
+	<style name="CustomThemeOrange" parent="AppTheme">
+		<item name="colorPrimary">#FF9800</item>
+		<item name="colorAccent">#FFE0B2</item>
+		<item name="colorControlNormal">#FFE0B2</item>
+	</style>
+		
+	<style name="CustomThemeDeepOrange" parent="AppTheme">
+		<item name="colorPrimary">#FF5722</item>
+		<item name="colorAccent">#FFCCBC</item>
+		<item name="colorControlNormal">#FFCCBC</item>
+	</style>
+	
+	<style name="CustomThemeBrown" parent="AppTheme">
+		<item name="colorPrimary">#795548</item>
+		<item name="colorAccent">#D7CCC8</item>
+		<item name="colorControlNormal">#D7CCC8</item>
+	</style>	
+	<style name="CustomThemeGrey" parent="AppTheme">
+		<item name="colorPrimary">#9E9E9E</item>
+		<item name="colorAccent">#F5F5F5</item>
+		<item name="colorControlNormal">#F5F5F5</item>
+	</style>
+	<style name="CustomThemeBlueGrey" parent="AppTheme">
+		<item name="colorPrimary">#607D8B</item>
+		<item name="colorAccent">#CFD8DC</item>
+		<item name="colorControlNormal">#CFD8DC</item>
+	</style>
+		
+</resources>

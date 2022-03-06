@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+	android:background="?android:selectableItemBackground"
+	android:gravity="center"
+	android:orientation="vertical">
+   <TextView
+        android:id="@+id/textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:textSize="16sp"
+		android:gravity="center"
+		android:padding="16dp"
+		android:text="Unknown"
+		android:textColor="@color/colorOnSurface"/>
+		<View
+		android:layout_width="match_parent"
+		android:layout_height="0.5dp"
+		android:layout_marginLeft="16dp"
+		android:layout_marginRight="16dp"
+		android:background="@drawable/round_outline"
+		android:backgroundTint="@color/colorGrey"/>
+</LinearLayout>
