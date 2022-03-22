@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.221875" />
+        <entry key="app/src/main/res/layout/activity_translate_text.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/dialog_selected_texts.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/row_selectable_text.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/row_translated_text.xml" value="0.19375" />
+      </map>
+    </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="androidx.annotation.ColorInt" />
+    </list>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

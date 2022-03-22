@@ -1,8 +1,13 @@
 package com.shapun.screentranslater.util;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import androidx.annotation.ColorInt;
+import androidx.core.content.ContextCompat;
+
+import com.google.android.material.color.MaterialColors;
+import com.shapun.screentranslater.R;
 
 public final class UiUtils {
     public static Drawable getDrawable(
@@ -31,5 +36,21 @@ public final class UiUtils {
         gd.setColor(color);
 		gd.setStroke(strokeWidth,strokeColor);
 		return gd;
+    }
+    @ColorInt
+    public static int getColorPrimary(Context ctx){
+        return MaterialColors.getColor(
+                ctx,
+                android.R.attr.colorPrimary,
+                ContextCompat.getColor(ctx, R.color.colorPrimary)
+        );
+    }
+
+    @ColorInt
+    public static int getColorControlNormal(Context ctx){
+        return MaterialColors.getColor(
+                ctx,
+                android.R.attr.colorControlNormal,
+                ContextCompat.getColor(ctx, R.color.colorControlNormal));
     }
 }

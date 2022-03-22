@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.ViewGroup
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +15,6 @@ import com.mannan.translateapi.Language
 import com.mannan.translateapi.TranslateAPI
 import com.mannan.translateapi.TranslateAPI.TranslateListener
 import com.shapun.screentranslater.R
-import com.shapun.screentranslater.activity.TranslateTextActivity
 import com.shapun.screentranslater.adapter.TranslatedTextAdapter
 import com.shapun.screentranslater.databinding.ActivityTranslateTextBinding
 import com.shapun.screentranslater.preferences.Preferences
@@ -48,7 +46,7 @@ class TranslateTextActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun startTranslating() {
-        val list  = intent.getSerializableExtra(LIST_KEY) as ArrayList<String?>?
+        val list  = intent.getSerializableExtra(LIST_KEY) as ArrayList<*>
         mData = ArrayList()
         binding.tvStatus.text = "Translating . . ."
         binding.tvStatus.setOnClickListener(null)
@@ -103,7 +101,7 @@ class TranslateTextActivity : AppCompatActivity() {
         item.setIcon(R.drawable.ic_language)
         item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS)
         item.setOnMenuItemClickListener {
-            val intent = Intent(this, SelectLanguageActivity::class.java);
+            val intent = Intent(this, SelectLanguageActivity::class.java)
             mActivityLauncherSelectLanguage.launch(intent)
             true
         }
@@ -113,14 +111,14 @@ class TranslateTextActivity : AppCompatActivity() {
 
     public override fun onStart() {
         super.onStart()
-        val width = ViewGroup.LayoutParams.MATCH_PARENT
-        val height = ViewGroup.LayoutParams.MATCH_PARENT
-        window.setLayout(width, height)
+        //val width = ViewGroup.LayoutParams.MATCH_PARENT
+        //val height = ViewGroup.LayoutParams.MATCH_PARENT
+        //window.setLayout(width, height)
         window.setBackgroundDrawableResource(android.R.color.transparent)
     }
 
+
     companion object {
-        private const val TAG = "TranslateTextActivity"
         private const val LIST_KEY = "list_data"
         @JvmStatic
         fun newIntent(context: Context, list: ArrayList<String>): Intent {

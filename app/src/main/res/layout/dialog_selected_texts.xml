@@ -1,89 +1,103 @@
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.shapun.screentranslater.widget.MarkableView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/markable_view"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    app:borderColor="?android:colorPrimary"
+    app:highlightColor="?android:colorPrimary"
+    app:borderWidth="8dp"
+    android:padding="8dp">
 
-    <LinearLayout
-        android:id="@+id/sheet_content"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-        android:background="@drawable/bottom_sheet_background"
-        android:elevation="16dp"
-        android:orientation="vertical"
-        app:behavior_peekHeight="50dp" >
+        android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/sheet_content"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:padding="8dp" >
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_sheet_background"
+            android:elevation="16dp"
+            android:orientation="vertical"
+            app:behavior_peekHeight="50dp"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-            <ImageView
-                android:id="@+id/img_close"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-				android:background="?android:selectableItemBackgroundBorderless"
-                android:padding="5dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_close"
-                android:tint="@color/colorOnSurface"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:padding="8dp">
 
-            <TextView
-                android:id="@+id/selected_text_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="?android:selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:text="No text selected"
-                android:textSize="16sp" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_close"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="?android:selectableItemBackgroundBorderless"
+                    android:padding="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_close"
+                    app:tint="@color/colorOnSurface"
+                    android:contentDescription="Cancel"
+                    tools:ignore="HardcodedText" />
 
-            <ImageView
-                android:id="@+id/img_select_all"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:background="?android:selectableItemBackgroundBorderless"
-                android:padding="5dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_select_all"
-                android:tint="@color/colorOnSurface" />
+                <TextView
+                    android:id="@+id/selected_text_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="?android:selectableItemBackgroundBorderless"
+                    android:padding="8dp"
+                    android:text="No text selected"
+                    android:textSize="16sp" />
 
-            <ImageView
-                android:id="@+id/img_copy"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:background="?android:selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_copy"
-                android:tint="@color/colorOnSurface" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_select_all"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="?android:selectableItemBackgroundBorderless"
+                    android:padding="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_select_all"
+                    app:tint="@color/colorOnSurface" />
 
-            <ImageView
-                android:id="@+id/img_translate"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="5dp"
-                android:background="?android:selectableItemBackgroundBorderless"
-                android:padding="8dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_translate"
-                android:tint="@color/colorOnSurface" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_copy"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="?android:selectableItemBackgroundBorderless"
+                    android:padding="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_copy"
+                    app:tint="@color/colorOnSurface" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_translate"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="?android:selectableItemBackgroundBorderless"
+                    android:padding="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_translate"
+                    app:tint="@color/colorOnSurface" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_margin="2dp"
+                android:background="@color/colorGrey" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_margin="2dp"
-            android:background="@color/colorGrey" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</com.shapun.screentranslater.widget.MarkableView>

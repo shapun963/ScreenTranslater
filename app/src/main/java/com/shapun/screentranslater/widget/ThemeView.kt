@@ -1,7 +1,10 @@
 package com.shapun.screentranslater.widget
 
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.Path
+import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import androidx.annotation.ColorInt
@@ -43,7 +46,7 @@ class ThemeView @JvmOverloads constructor(
             mCornerRadius =
                 a.getDimensionPixelSize(R.styleable.ThemeView_cornerRadius, mCornerRadius)
             mStrokeWidth = a.getDimensionPixelSize(R.styleable.ThemeView_strokeWidth, mStrokeWidth)
-            strokeColor = a.getColor(R.styleable.ThemeView_borderColor, strokeColor)
+            strokeColor = a.getColor(R.styleable.ThemeView_strokeColor, strokeColor)
             a.recycle()
         }
         mStrokePaint.color = strokeColor
