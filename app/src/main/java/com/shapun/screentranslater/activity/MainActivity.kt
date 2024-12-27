@@ -17,7 +17,7 @@ import com.shapun.screentranslater.R
 import com.shapun.screentranslater.databinding.ActivityMainBinding
 import com.shapun.screentranslater.dialog.SelectThemeBottomSheetDialogFragment
 import com.shapun.screentranslater.preferences.Preferences
-import com.shapun.screentranslater.service.ScreenTranslateService
+import com.shapun.screentranslater.service.MainService
 import com.shapun.screentranslater.util.AccessibilityServiceUtils
 import com.shapun.screentranslater.util.Utils
 
@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //startService(Intent(this,MainService::class.java).setAction(MainService.ACTION_START_OCR_MODE))
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.switchParent.layoutTransition.enableTransitionType(LayoutTransition.CHANGING)
@@ -95,6 +96,16 @@ class MainActivity : AppCompatActivity() {
                 Utils.toast(this, "PlayStore not found")
             }
         }
+        /*
+        val textRecognizer =  TextRecognizer.Builder(this).build()
+        val bitmap = (resources.getDrawable(R.drawable.test) as BitmapDrawable).bitmap
+        val frame = Frame.Builder()
+            .setBitmap(bitmap)
+            .build()
+        val textBlocks = textRecognizer.detect(frame)
+        var s = ""
+        textBlocks.forEach { key, value -> s+= value.value  }
+         */
     }
 
     override fun onSaveInstanceState(bundle: Bundle) {
@@ -121,11 +132,11 @@ class MainActivity : AppCompatActivity() {
         if (mSwitchEnabled) {
             if (hasAccessibilityPermission()) {
                 Preferences.setServiceEnabled(this, true)
-                val intent = Intent(this, ScreenTranslateService::class.java)
-                intent.action = ScreenTranslateService.ACTION_SHOW_NOTIFICATION
+                val intent = Intent(this, MainService::class.java)
+                intent.action = MainService.ACTION_SHOW_NOTIFICATION
                 startService(intent)
             } else {
-                MaterialAlertDialogBuilder(this, R.style.Theme_MyApp_Dialog_Alert)
+                MaterialAlertDialogBuilder(this)
                     .setTitle("Permission Required")
                     .setMessage("${getString(R.string.app_name)} requires Accessibility Service permission in order to extract texts from the screen. Need some suggestions on what should be written"
                     )
@@ -142,8 +153,8 @@ class MainActivity : AppCompatActivity() {
             }
         } else {
             Preferences.setServiceEnabled(this, false)
-            val intent = Intent(this, ScreenTranslateService::class.java)
-            intent.action = ScreenTranslateService.ACTION_HIDE_NOTIFICATION
+            val intent = Intent(this, MainService::class.java)
+            intent.action = MainService.ACTION_HIDE_NOTIFICATION
             startService(intent)
         }
         binding.tvSwitchText.setTextColor(if (mSwitchEnabled) -0x1 else -0x424243)
@@ -154,7 +165,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun hasAccessibilityPermission(): Boolean{
         return AccessibilityServiceUtils.isAccessibilityServiceEnabled(
-            this, ScreenTranslateService::class.java
+            this, MainService::class.java
         )
     }
 }

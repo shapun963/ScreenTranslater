@@ -32,7 +32,6 @@ public class TranslateAPI {
         this.langFrom = langFrom;
         this.langTo = langTo;
         this.word = text;
-		
 		Executors.newSingleThreadExecutor().execute(() -> {
 			try {
                 url =
@@ -49,43 +48,47 @@ public class TranslateAPI {
                 con.setRequestProperty("User-Agent", "Mozilla/5.0");
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
                 String inputLine;
-                StringBuffer response = new StringBuffer();
+                StringBuilder response = new StringBuilder();
                 while ((inputLine = in.readLine()) != null) {
                     response.append(inputLine);
                 }
                 in.close();
                 resp = response.toString();
             } catch (UnsupportedEncodingException e) {
+                Log.d(TAG, "onPostExecute: " + e.getLocalizedMessage());
                 e.printStackTrace();
             } catch (MalformedURLException e) {
+                Log.d(TAG, "onPostExecute: " + e.getLocalizedMessage());
                 e.printStackTrace();
             } catch (IOException e) {
+                Log.d(TAG, "onPostExecute: " + e.getLocalizedMessage());
                 e.printStackTrace();
             } catch (Exception e) {
+                Log.d(TAG, "onPostExecute: " + e.getLocalizedMessage());
                 e.printStackTrace();
             }
 			
 			ContextCompat.getMainExecutor(ctx).execute(() ->{
-			String temp = "";
+			StringBuilder temp = new StringBuilder();
             if (resp == null) {
-                listener.onFailure("Network Error");
+                if(listener!=null)listener.onFailure("Network Error");
             } else {
                 try {
                     JSONArray main = new JSONArray(resp);
                     JSONArray total = (JSONArray) main.get(0);
                     for (int i = 0; i < total.length(); i++) {
                         JSONArray currentLine = (JSONArray) total.get(i);
-                        temp = temp + currentLine.get(0).toString();
+                        temp.append(currentLine.get(0).toString());
                     }
                     Log.d(TAG, "onPostExecute: " + temp);
 
                     if (temp.length() > 2) {
-                        listener.onSuccess(temp);
+                        if(listener!=null)listener.onSuccess(temp.toString());
                     } else {
-                        listener.onFailure("Invalid Input String");
+                        if(listener!=null)listener.onFailure("Invalid Input String");
                     }
                 } catch (JSONException e) {
-                    listener.onFailure(e.getLocalizedMessage());
+                    if(listener!=null)listener.onFailure(e.getLocalizedMessage());
                     e.printStackTrace();
                 }
             }

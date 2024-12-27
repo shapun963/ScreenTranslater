@@ -5,6 +5,9 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Build;
 import android.util.TypedValue;
 import android.view.View;
@@ -57,4 +60,15 @@ public class Utils {
 	public static void showSnackbar(View v,CharSequence text){
 		Snackbar.make(v,text,Snackbar.LENGTH_SHORT).show();
 	}
+	public static Bitmap getBitmap(View view){
+        Bitmap bitmap = Bitmap.createBitmap(view.getMeasuredWidth(),view.getMeasuredHeight(),Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        if(view.getBackground() == null){
+            canvas.drawColor(Color.WHITE);
+        }else{
+            view.getBackground().draw(canvas);
+        }
+        view.draw(canvas);
+        return bitmap;
+    }
 }

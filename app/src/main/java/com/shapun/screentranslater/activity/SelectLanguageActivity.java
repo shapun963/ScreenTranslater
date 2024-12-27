@@ -13,6 +13,8 @@ import com.mannan.translateapi.Language;
 import com.shapun.screentranslater.R;
 import com.shapun.screentranslater.adapter.SelectLanguageAdapter;
 import com.shapun.screentranslater.preferences.Preferences;
+import com.shapun.screentranslater.widget.MarkableView;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,8 +26,8 @@ public class SelectLanguageActivity extends AppCompatActivity
     private SelectLanguageAdapter mSelectLanguageAdapter;
 
     @Override
-    public void onCreate(Bundle savedInstamceState) {
-        super.onCreate(savedInstamceState);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 		//getTheme().applyStyle(R.style.AppTheme,true);
 		getTheme().applyStyle(Preferences.getTheme(this),true);
         setContentView(R.layout.activity_select_language);
@@ -64,7 +66,6 @@ public class SelectLanguageActivity extends AppCompatActivity
             }
         }
         mSelectLanguageAdapter.notifyDataSetChanged();
-
         return true;
     }
 	@Override

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,7 +21,7 @@ public class SelectedTextsAdapter extends RecyclerView.Adapter<SelectedTextsAdap
         public void onCloseClicked(int pos);
     }
 
-    private final List<String> data;
+    private final List<AccessibilityNodeInfo> data;
     private OnCloseClickListener mOnCloseClickListener;
 
     /** Provide a reference to the type of views that you are using (custom ViewHolder). */
@@ -41,7 +42,7 @@ public class SelectedTextsAdapter extends RecyclerView.Adapter<SelectedTextsAdap
      *
      * @param dataSet String[] containing the data to populate views to be used by RecyclerView.
      */
-    public SelectedTextsAdapter(List<String> data) {
+    public SelectedTextsAdapter(List<AccessibilityNodeInfo> data) {
         this.data = data;
     }
 
@@ -71,7 +72,7 @@ public class SelectedTextsAdapter extends RecyclerView.Adapter<SelectedTextsAdap
         // contents of the view with that element
         TextView textview = viewHolder.textview;
         ImageView img_close = viewHolder.img_close;
-        textview.setText(data.get(position));
+        textview.setText(data.get(position).getText());
         final int pos = position;
         img_close.setOnClickListener(
                 new View.OnClickListener() {

@@ -1,14 +1,13 @@
-<com.shapun.screentranslater.widget.MarkableView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.shapun.screentranslater.widget.MarkableView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/markable_view"
-    android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
     app:borderColor="?android:colorPrimary"
-    app:highlightColor="?android:colorPrimary"
     app:borderWidth="8dp"
-    android:padding="8dp">
+    app:highlightColor="?android:colorPrimary">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinator"
@@ -36,11 +35,11 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:background="?android:selectableItemBackgroundBorderless"
+                    android:contentDescription="Cancel"
                     android:padding="5dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_close"
                     app:tint="@color/colorOnSurface"
-                    android:contentDescription="Cancel"
                     tools:ignore="HardcodedText" />
 
                 <TextView

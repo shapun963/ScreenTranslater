@@ -3,6 +3,6 @@
     <string name="app_name">Screen Translater</string>
     <string name="accessibility_description">accessibility description </string>
     <string name="accessibility_service_label"> Accessibility Service Label </string>
-	<string name="service_enabled_info">You have enabled app_name service now you can tap on notification at top to start copying or translating text on screen .</string>
-	<string name="service_disabled_info">You have disabled app_name service you need to turn on the above switch to enable service .</string>
+    <string name="service_enabled_info">You have enabled app_name service now you can tap on notification at top to start copying or translating text on screen .</string>
+    <string name="service_disabled_info">You have disabled app_name service you need to turn on the above switch to enable service .</string>
 </resources>

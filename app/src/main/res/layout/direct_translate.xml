@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.shapun.screentranslater.widget.MarkableView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/markable_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    app:borderColor="?android:colorPrimary"
+    app:borderWidth="5dp"
+    app:highlightColor="?android:colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bottom_sheet_background"
+        android:elevation="16dp"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:contentDescription="Close"
+            android:padding="8dp"
+            android:src="@drawable/ic_close"
+            app:tint="@color/colorOnSurface"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:contentDescription="Close"
+            android:padding="8dp"
+            android:src="@drawable/ic_language"
+            app:tint="@color/colorOnSurface"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Translating . . . "
+            android:textColor="@color/colorOnSurface"
+            tools:ignore="HardcodedText" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retry"
+            android:textColor="@color/colorOnSurface"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+</com.shapun.screentranslater.widget.MarkableView>

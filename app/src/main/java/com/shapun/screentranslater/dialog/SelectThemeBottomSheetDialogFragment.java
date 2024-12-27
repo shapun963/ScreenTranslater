@@ -16,10 +16,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.color.MaterialColors;
 import com.shapun.screentranslater.R;
 import com.shapun.screentranslater.preferences.Preferences;
-import com.shapun.screentranslater.service.ScreenTranslateService;
+import com.shapun.screentranslater.service.MainService;
 import com.shapun.screentranslater.theme.Theme;
 import com.shapun.screentranslater.theme.ThemeAdapter;
-import com.shapun.screentranslater.util.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -153,8 +152,8 @@ public class SelectThemeBottomSheetDialogFragment extends BottomSheetDialogFragm
                 pos -> {
                     Preferences.setTheme(requireContext(), mThemeList.get(pos));
                     mThemeAdapter.setSelectedTheme(pos);
-					Intent intent = new Intent(requireContext(), ScreenTranslateService.class);
-                    intent.setAction(ScreenTranslateService.ACTION_SHOW_NOTIFICATION);
+					Intent intent = new Intent(requireContext(), MainService.class);
+                    intent.setAction(MainService.ACTION_SHOW_NOTIFICATION);
                     requireContext().startService(intent);
                     requireActivity().recreate();
                 });
